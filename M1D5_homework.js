@@ -71,14 +71,34 @@ giveExampleAnswerToExercise(4, boundary(400))
  It should add the word "Strive" in front of the given string, but if the given string already begins with "Strive", then it should just return the original string.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const strivify = function (acceptedString) {
+    if (acceptedString === 'Strive') {
+        return acceptedString
+    } else {
+        return 'Strive ' + acceptedString
+    }
+}
+
+giveExampleAnswerToExercise(5, strivify('Strive'))
 
 /* EXERCISE 6
  Write a function called "check3and7" which accepts a positive number as a parameter and checks if it is a multiple of 3 or a multiple of 7.
  HINT: Modulus Operator
 */
 
-/* WRITE YOUR ANSWER HERE */
+const check3and7 = function (positiveNum) {
+    if (positiveNum <= 0) {
+        return `${ positiveNum } isn't a positive number! Try harder, c'mon...`
+    } else if (positiveNum > 0 && positiveNum % 3 === 0) {
+        return `${ positiveNum } is a multiple of 3!`
+    } else if (positiveNum > 0 && positiveNum % 7 === 0) {
+        return `${ positiveNum } is a multiple of 7!`
+    } else {
+        return `It looks like ${ positiveNum } isn't a multiple of either 3 or 7. Try again!`
+    }
+}
+
+giveExampleAnswerToExercise(6, check3and7(75))
 
 /* EXERCISE 7
  Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
