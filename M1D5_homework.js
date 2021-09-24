@@ -9,7 +9,7 @@ ASSIGNMENT RULES
 */
 
 const giveExampleAnswerToExercise = function (exNum, answer) {
-    console.log(`The answer to EXERCISE ${ exNum } is:\n\n${ answer }\n\n`)
+    console.log(`An example answer to EXERCISE ${ exNum } is:\n\n${ answer }\n\n`)
 }
 
 /* EXERCISE 1
@@ -117,19 +117,41 @@ giveExampleAnswerToExercise(7, reverseString('a man a plan a canal panama'))
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const upperFirst = function (givenString) {
+    let splitString = givenString.toLowerCase().split(' ')
+    for (let i = 0; i < splitString.length; i++) {
+        splitString[i] = splitString[i].charAt(0).toUpperCase() + splitString[i].substring(1)
+    }
+    return splitString.join(' ')
+}
+
+
+giveExampleAnswerToExercise(8, upperFirst('marti purull urrea'))
 
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const cutString = function (originalString) {
+    let newString = originalString.slice(1, -1)
+    return newString
+}
+
+giveExampleAnswerToExercise(9, cutString('thisisit'))
 
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const giveMeRandom = function (n) {
+    let arrayOfRandomNumbers = []
+    for (let i = 0; i < n; i++) {
+        arrayOfRandomNumbers.push(Math.floor(Math.random() * 10))
+    }
+    return arrayOfRandomNumbers
+}
+
+giveExampleAnswerToExercise(10, giveMeRandom(12))
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
