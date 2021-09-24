@@ -72,14 +72,14 @@ giveExampleAnswerToExercise(4, boundary(400))
 */
 
 const strivify = function (acceptedString) {
-    if (acceptedString === 'Strive') {
+    if (acceptedString.startsWith('Strive')) {
         return acceptedString
     } else {
         return 'Strive ' + acceptedString
     }
 }
 
-giveExampleAnswerToExercise(5, strivify('Strive'))
+giveExampleAnswerToExercise(5, strivify('I love you'))
 
 /* EXERCISE 6
  Write a function called "check3and7" which accepts a positive number as a parameter and checks if it is a multiple of 3 or a multiple of 7.
@@ -113,6 +113,14 @@ const reverseString = function (givenString) {
 
 giveExampleAnswerToExercise(7, reverseString('a man a plan a canal panama'))
 
+//better way:
+
+const reverseStringPro = function (givenString) {
+    return givenString.split('').reverse().join('')
+}
+
+giveExampleAnswerToExercise(7, reverseString('a better solution in one line!'))
+
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
 */
@@ -124,7 +132,6 @@ const upperFirst = function (givenString) {
     }
     return splitString.join(' ')
 }
-
 
 giveExampleAnswerToExercise(8, upperFirst('marti purull urrea'))
 
@@ -152,6 +159,145 @@ const giveMeRandom = function (n) {
 }
 
 giveExampleAnswerToExercise(10, giveMeRandom(12))
+
+/* WHEN YOU ARE FINISHED
+ Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
+*/
+
+/*----------------------------------------------------------- EXTRA EXERCISES -----------------------------------------------------------*/
+
+// Additional assignments for Day 5
+
+/* EXTRA 1
+ Write a function called "checkArray" which receives an array of random numbers (created with giveMeRandom) and prints, for each item, whether it's bigger than 5 or not.
+ The function should return the sum of just the numbers bigger than 5.
+*/
+
+const checkArray = function (receivedArray) {
+    let biggerThanFiveSum = 0
+    for (let i = 0; i < receivedArray.length; i++) {
+        if (receivedArray[i] > 5) {
+            console.log(`${ receivedArray[i] } is bigger than 5.`)
+            biggerThanFiveSum += receivedArray[i]
+        } else {
+            console.log(`${ receivedArray[i] } isn't higher than 5.`)
+        }
+    }
+    console.log(`The sum of elements higher than 5 is: ${ biggerThanFiveSum }`)
+}
+
+checkArray(giveMeRandom(4))
+
+/* EXTRA 2
+ In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.
+ Create a function called "shoppingCartTotal" which calculates the total due to the shop.
+*/
+
+let shoppingCart = [
+    tennisRacket = {
+        price: 59.99,
+        name: 'Ultra Max Pro Rocket Racket',
+        SKU: 'RKT654',
+        qty: 5
+    },
+    tennisBalls = {
+        price: 9.99,
+        name: 'Ultra Max Pro Ballsy Balls',
+        SKU: 'BBS468',
+        qty: 10
+    },
+    hairBand = {
+        price: 19.99,
+        name: 'Ultra Max Pro Holy Hair Band',
+        SKU: 'HHB151',
+        qty: 1
+    }
+]
+
+const shoppingCartTotal = function ([...inCartItems]) {
+    let totalDue = 0
+    for (item of inCartItems) {
+        totalDue += (item.price * item.qty)
+    }
+    console.log(`Total due to shop: €${ totalDue }.`)
+}
+
+shoppingCartTotal([tennisBalls, tennisRacket])
+
+/* EXTRA 3
+ In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.
+ Create a function called "addToShoppingCart" which receives a new object, adds it to shoppingCart and returns the total number of items in the shoppingCart.
+*/
+
+let tennisNet = {
+    price: 129.99,
+    name: 'Over-The-Net Pro Net',
+    SKU: 'OPN989',
+    qty: 1
+}
+
+const addToShoppingCart = function (newItem) {
+    shoppingCart.push(newItem)
+    console.log(`You have ${ shoppingCart.length } items in your cart.`)
+}
+
+addToShoppingCart(tennisNet)
+
+/* EXTRA 4
+ In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.
+ Create a function called "maxShoppingCart" which receives the shoppingCart array and returns the most expensive item in it.
+*/
+
+/* WRITE YOUR ANSWER HERE */
+
+/* EXTRA 5
+ In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.
+ Create a function called "latestShoppingCart" which receives the shoppingCart array and returns the last item.
+*/
+
+/* WRITE YOUR ANSWER HERE */
+
+/* EXTRA 6
+ Create a function called "loopUntil" which receives an integer x between 0 and 9 as a parameter.
+ The function loops and prints a random number between 0 and 9 until the random number is bigger than x for three times in a row.
+*/
+
+/* WRITE YOUR ANSWER HERE */
+
+/* EXTRA 7
+ Write a function called "average" which receives an array and returns the average numerical value. The function automatically skips non-numeric entries in the array.
+*/
+
+/* WRITE YOUR ANSWER HERE */
+
+/* EXTRA 8
+ Write a function called "longest" to find the longest string from a given array of strings.
+*/
+
+/* WRITE YOUR ANSWER HERE */
+
+/* EXTRA 9
+ Write a function to create a very simple anti spam filter for your mailbox. The function takes a string emailContent, and returns a boolean.
+ The function should return true if the emailContent string does not contain the words SPAM or SCAM.
+*/
+
+/* WRITE YOUR ANSWER HERE */
+
+/* EXTRA 10
+ Write a function that receives a date as a parameter and calculates the number of days passed since the given date.
+*/
+
+/* WRITE YOUR ANSWER HERE */
+
+/* EXTRA 11
+ Write a function called "matrixGenerator" which receives two integers, x and y, as parameters.
+ The result should be a matrix of x times y with, as value, the index of the position.
+ Ex.: x = 3, y = 2
+ ["00","01","02"
+ "10","11","12"]
+*/
+
+/* WRITE YOUR ANSWER HERE */
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
