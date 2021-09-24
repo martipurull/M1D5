@@ -104,7 +104,14 @@ giveExampleAnswerToExercise(6, check3and7(75))
  Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
 */
 
-/* WRITE YOUR ANSWER HERE */
+const reverseString = function (givenString) {
+    let splitArray = givenString.split('')
+    let reversedArray = splitArray.reverse()
+    let result = reversedArray.join('')
+    return result
+}
+
+giveExampleAnswerToExercise(7, reverseString('a man a plan a canal panama'))
 
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
