@@ -8,6 +8,10 @@ ASSIGNMENT RULES
 - The solution must be pushed to the repository and be available for the tutors by the end of the day (5PM CET)
 */
 
+const giveExampleAnswerToExercise = function (exNum, answer) {
+    console.log(`The answer to EXERCISE ${ exNum } is:\n\n${ answer }\n\n`)
+}
+
 /* EXERCISE 1
  Write a function called "area" which receives 2 parameters (l1, l2) and calculates the area of the associated rectangle.
 */
@@ -16,7 +20,7 @@ const area = function (l1, l2) {
     return l1 * l2
 }
 
-console.log(area(2, 6))
+giveExampleAnswerToExercise(1, area(2, 3))
 
 /* EXERCISE 2
  Write a function called "crazySum" which receives two integers as parameters.
@@ -31,20 +35,36 @@ const crazySum = function (int1, int2) {
     }
 }
 
-console.log(crazySum(3, 3))
+giveExampleAnswerToExercise(2, crazySum(3, 3))
 
 /* EXERCISE 3
  Write a function called "crazyDiff" that computes the absolute difference between a given number and 19.
  It should return triple their absolute difference if the given number is greater than 19.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const crazyDiff = function (givenNum) {
+    if (givenNum > 19) {
+        return (Math.abs(givenNum - 19)) * 3
+    } else {
+        return Math.abs(givenNum - 19)
+    }
+}
+
+giveExampleAnswerToExercise(3, crazyDiff(20))
 
 /* EXERCISE 4
  Write a function called "boundary" which accept an integer parameter n and returns true if n is within 20 and 100 (included) or if n it's equal to 400.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const boundary = function (n) {
+    if ((n >= 20 && n <= 100) || n === 400) {
+        return true
+    } else {
+        return false
+    }
+}
+
+giveExampleAnswerToExercise(4, boundary(400))
 
 /* EXERCISE 5
  Write a function called "strivify" which accepts a string as a parameter.
