@@ -352,7 +352,22 @@ longest(givenArrayOfStrings)
  The function should return true if the emailContent string does not contain the words SPAM or SCAM.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const detectSpam = function (emailContent) {
+    let flagWords = ['SPAM', 'SCAM', 'Spam', 'Scam', 'spam', 'scam']
+    let isEmailSafe = true
+    for (let i = 0; i < emailContent.length; i++) {
+        if (emailContent.includes(flagWords[i])) {
+            isEmailSafe = false
+        }
+    }
+    if (isEmailSafe === true) {
+        console.log('Email is safe to open.')
+    } else {
+        console.log('WARNING! Email could contain spam!')
+    }
+}
+
+detectSpam('This is a safe email with no malice in it whatsoever. scam!')
 
 /* EXTRA 10
  Write a function that receives a date as a parameter and calculates the number of days passed since the given date.
