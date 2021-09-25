@@ -307,13 +307,27 @@ const loopUntil = function (x) {
     }
 }
 
-loopUntil(8)
+loopUntil(2)
 
 /* EXTRA 7
  Write a function called "average" which receives an array and returns the average numerical value. The function automatically skips non-numeric entries in the array.
 */
 
-/* WRITE YOUR ANSWER HERE */
+let randomArrayOfNumbers = [3, 2, 9, 10, 'fudge', 44, '2', 1]
+
+const average = function (receivedArray) {
+    let receivedArraySum = 0
+    let numberOfIntegersInArray = 0
+    for (let i = 0; i < receivedArray.length; i++) {
+        if (Number.isInteger(receivedArray[i])) {
+            receivedArraySum += receivedArray[i]
+            numberOfIntegersInArray++
+        }
+    }
+    console.log(`The average value of the integers in the array is: ${ receivedArraySum / numberOfIntegersInArray }`)
+}
+
+average(randomArrayOfNumbers)
 
 /* EXTRA 8
  Write a function called "longest" to find the longest string from a given array of strings.
