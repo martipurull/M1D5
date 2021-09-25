@@ -290,7 +290,24 @@ latestShoppingCart(shoppingCart)
  The function loops and prints a random number between 0 and 9 until the random number is bigger than x for three times in a row.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const loopUntil = function (x) {
+    if (x > 0 && x < 10) {
+        let counter = 0
+        while (counter !== 3) {
+            let randomNumber = Math.floor(Math.random() * 10)
+            if (randomNumber > x) {
+                counter++
+            } else {
+                counter = 0
+            }
+            console.log(randomNumber)
+        }
+    } else {
+        console.log('The integer provided must be between 1 and 9!')
+    }
+}
+
+loopUntil(8)
 
 /* EXTRA 7
  Write a function called "average" which receives an array and returns the average numerical value. The function automatically skips non-numeric entries in the array.
