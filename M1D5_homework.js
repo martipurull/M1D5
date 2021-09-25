@@ -248,14 +248,42 @@ addToShoppingCart(tennisNet)
  Create a function called "maxShoppingCart" which receives the shoppingCart array and returns the most expensive item in it.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const maxShoppingCart = function (shoppingCart) {
+    let itemPrices = []
+    for (let i = 0; i < shoppingCart.length; i++) {
+        itemPrices.push(shoppingCart[i].price)
+    }
+    let mostExpensiveItem = Math.max(...itemPrices)
+    console.log(`The most expensive item in the cart is €${ mostExpensiveItem }.`)
+}
+
+maxShoppingCart(shoppingCart)
+
+//a better approach
+
+const maxShoppingCartPro = function (shoppingCart) {
+    let mostExpensiveItem = shoppingCart[0]
+    for (let i = 0; i < shoppingCart.length; i++) {
+        if (shoppingCart[i].price > mostExpensiveItem.price) {
+            mostExpensiveItem = shoppingCart[i]
+        }
+    }
+    console.log(`${ mostExpensiveItem.name } is the most expensive item in the cart. It costs ${ mostExpensiveItem.price }.`)
+}
+
+maxShoppingCartPro(shoppingCart)
 
 /* EXTRA 5
  In your eCommerce you have an array of objects called shoppingCart. Each one of these objects has a price, a name, an id and the quantity to be shipped.
  Create a function called "latestShoppingCart" which receives the shoppingCart array and returns the last item.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const latestShoppingCart = function (shoppingCart) {
+    let latestItem = shoppingCart[shoppingCart.length - 1]
+    console.log(`The latest item in the cart is ${ latestItem.name }.`)
+}
+
+latestShoppingCart(shoppingCart)
 
 /* EXTRA 6
  Create a function called "loopUntil" which receives an integer x between 0 and 9 as a parameter.
