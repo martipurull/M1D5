@@ -333,7 +333,19 @@ average(randomArrayOfNumbers)
  Write a function called "longest" to find the longest string from a given array of strings.
 */
 
-/* WRITE YOUR ANSWER HERE */
+let givenArrayOfStrings = ["Let me in!", "I am determined to becoming the longest string in this array and I will stop at nothing until I am", "I don't know about that", "C'mon, it's not my fault I lost my keys!"]
+
+const longest = function (providedArrayOfStrings) {
+    let longestStringWithinArray = providedArrayOfStrings[0]
+    for (let i = 0; i < providedArrayOfStrings.length; i++) {
+        if (providedArrayOfStrings[i].length > longestStringWithinArray.length) {
+            longestStringWithinArray = providedArrayOfStrings[i]
+        }
+    }
+    console.log(`"${ longestStringWithinArray }" is the longest string with ${ longestStringWithinArray.length } characters!`)
+}
+
+longest(givenArrayOfStrings)
 
 /* EXTRA 9
  Write a function to create a very simple anti spam filter for your mailbox. The function takes a string emailContent, and returns a boolean.
