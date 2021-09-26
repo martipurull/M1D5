@@ -377,7 +377,7 @@ const calculateDaysPassed = function (givenDate) {
     let receivedDate = new Date(givenDate).getTime()
     let todaysDate = Date.now()
     let timePassed = todaysDate - receivedDate
-    let numberOfDaysSince = Math.floor(timePassed / 86400000)
+    let numberOfDaysSince = Math.floor(timePassed / (1000 * 60 * 60 * 24))
     console.log(`It's been ${ numberOfDaysSince } days since the given date.`)
 }
 
@@ -391,7 +391,22 @@ calculateDaysPassed('September 20, 2021 22:00:00 GMT+2:00')
  "10","11","12"]
 */
 
-/* WRITE YOUR ANSWER HERE */
+const matrixGenerator = function (x, y) {
+    let matrix = []
+    for (let i = 0; i < y; i++) {
+        for (let j = 0; j < x; j++) {
+            matrix.push(i.toString() + j.toString())
+        }
+    }
+    console.log(matrix)
+    let charsPerRow = matrix.length / y
+    console.log(charsPerRow)
+    for (let k = 0; k < y; k++) {
+        console.log(matrix.slice(k * charsPerRow, (k + 1) * charsPerRow))
+    }
+}
+
+matrixGenerator(3, 2)
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
