@@ -333,7 +333,7 @@ average(randomArrayOfNumbers)
  Write a function called "longest" to find the longest string from a given array of strings.
 */
 
-let givenArrayOfStrings = ["Let me in!", "I am determined to becoming the longest string in this array and I will stop at nothing until I am", "I don't know about that", "C'mon, it's not my fault I lost my keys!"]
+let givenArrayOfStrings = ["Let me in!", "I am determined to become the longest string in this array and I will stop at nothing until I am", "I don't know about that", "C'mon, it's not my fault I lost my keys!"]
 
 const longest = function (providedArrayOfStrings) {
     let longestStringWithinArray = providedArrayOfStrings[0]
@@ -373,7 +373,15 @@ detectSpam('This is a safe email with no malice in it whatsoever. scam!')
  Write a function that receives a date as a parameter and calculates the number of days passed since the given date.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const calculateDaysPassed = function (givenDate) {
+    let receivedDate = new Date(givenDate).getTime()
+    let todaysDate = Date.now()
+    let timePassed = todaysDate - receivedDate
+    let numberOfDaysSince = Math.floor(timePassed / 86400000)
+    console.log(`It's been ${ numberOfDaysSince } days since the given date.`)
+}
+
+calculateDaysPassed('September 20, 2021 22:00:00 GMT+2:00')
 
 /* EXTRA 11
  Write a function called "matrixGenerator" which receives two integers, x and y, as parameters.
